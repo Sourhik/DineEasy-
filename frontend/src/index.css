@@ -1,0 +1,199 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   DINEEASY THEME: SOFT MAROON WITH BLACK & RED MAROON LETTERS
+   ========================================================================== */
+
+:root,
+body,
+body[data-theme="soft-maroon"],
+[data-theme="soft-maroon"] {
+  --bg-page: #F7EAE7;
+  --bg-page-gradient: linear-gradient(180deg, #FDF4F2 0%, #F5E5E1 100%);
+  --bg-card: #FFFFFF;
+  --bg-cream-surface: #FDF5F3;
+  --border-card: #EED4CE;
+  --border-card-subtle: #F7E7E3;
+  --text-canvas-heading: #0F172A; /* Deep Black */
+  --text-canvas-sub: #800020; /* Red Maroon */
+  --text-canvas-muted: #700F22; /* Red Maroon */
+  --text-canvas-border: rgba(128, 0, 32, 0.18);
+  --accent-gold: #C5951A;
+  --accent-maroon: #800020; /* Red Maroon */
+  --card-shadow: 0 4px 20px -2px rgba(128, 0, 32, 0.08);
+}
+
+body[data-theme="bright-maroon"],
+[data-theme="bright-maroon"] {
+  --bg-page: #7A1226;
+  --bg-page-gradient: linear-gradient(180deg, #85142B 0%, #6E1022 100%);
+  --bg-card: #FFFFFF;
+  --bg-cream-surface: #FFF5F6;
+  --border-card: #F2D0D6;
+  --border-card-subtle: #FCE8EB;
+  --text-canvas-heading: #FFFFFF;
+  --text-canvas-sub: #FDE8EC;
+  --text-canvas-muted: #F2B5C1;
+  --text-canvas-border: rgba(255, 255, 255, 0.18);
+  --accent-gold: #E5B239;
+  --accent-maroon: #85142B;
+  --card-shadow: 0 4px 20px -2px rgba(110, 16, 34, 0.25);
+}
+
+body[data-theme="warm-brown"],
+[data-theme="warm-brown"] {
+  --bg-page: #6A3219;
+  --bg-page-gradient: linear-gradient(180deg, #7A391D 0%, #5A2914 100%);
+  --bg-card: #FFFFFF;
+  --bg-cream-surface: #FDF8F5;
+  --border-card: #EAD5C8;
+  --border-card-subtle: #F5EAE2;
+  --text-canvas-heading: #FFFFFF;
+  --text-canvas-sub: #F8EDE6;
+  --text-canvas-muted: #E2C4B1;
+  --text-canvas-border: rgba(255, 255, 255, 0.18);
+  --accent-gold: #F59E0B;
+  --accent-maroon: #7A391D;
+  --card-shadow: 0 4px 20px -2px rgba(90, 41, 20, 0.25);
+}
+
+body[data-theme="soft-brown"],
+[data-theme="soft-brown"] {
+  --bg-page: #F7EFE8;
+  --bg-page-gradient: linear-gradient(180deg, #FCF7F2 0%, #F3E7DC 100%);
+  --bg-card: #FFFFFF;
+  --bg-cream-surface: #FCF8F4;
+  --border-card: #E8D9CD;
+  --border-card-subtle: #F5ECE3;
+  --text-canvas-heading: #0F172A; /* Deep Black */
+  --text-canvas-sub: #78350F; /* Warm Brown Maroon */
+  --text-canvas-muted: #92400E;
+  --text-canvas-border: rgba(106, 50, 25, 0.12);
+  --accent-gold: #C5951A;
+  --accent-maroon: #7A391D;
+  --card-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.06);
+}
+
+@layer base {
+  body {
+    background-color: var(--bg-page);
+    background-image: var(--bg-page-gradient);
+    background-attachment: fixed;
+    color: #0F172A; /* Black by default */
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    min-height: 100vh;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+}
+
+/* Page canvas background utility */
+.bg-theme-page {
+  background-color: var(--bg-page);
+  background-image: var(--bg-page-gradient);
+}
+
+/* Dynamic canvas typography: Headings in Black, Subtitles in Red Maroon */
+.theme-canvas-title {
+  color: var(--text-canvas-heading, #0F172A) !important;
+}
+
+.theme-canvas-sub {
+  color: var(--text-canvas-sub, #800020) !important;
+  font-weight: 500;
+}
+
+.theme-canvas-muted {
+  color: var(--text-canvas-muted, #700F22) !important;
+}
+
+.theme-canvas-border {
+  border-color: var(--text-canvas-border, rgba(128, 0, 32, 0.18)) !important;
+}
+
+/* Strict Black & Red Maroon typography rules on main pages */
+.bg-theme-page h1,
+.bg-theme-page h2,
+.bg-theme-page h3,
+.bg-white h1,
+.bg-white h2,
+.bg-white h3 {
+  color: #0F172A; /* Crisp Black */
+}
+
+/* Subheadings and descriptive text: Black */
+.bg-theme-page p,
+.bg-white p {
+  color: #1E293B; /* Crisp Dark Black */
+}
+
+/* Ensure secondary / subtle text is readable Black or Red Maroon (no faint gray) */
+.bg-theme-page .text-charcoal-600,
+.bg-white .text-charcoal-600,
+.bg-theme-page .text-charcoal-500,
+.bg-white .text-charcoal-500 {
+  color: #1E293B; /* Black */
+}
+
+/* Footer styling: All text words strictly in Black */
+footer,
+footer p,
+footer span,
+footer a,
+footer h4 {
+  color: #000000;
+}
+footer h4 {
+  color: #000000 !important;
+  font-weight: 700;
+}
+footer a:hover {
+  color: #800020 !important;
+}
+
+/* Red Maroon accent text utility */
+.text-maroon,
+.text-red-maroon,
+.burgundy-text {
+  color: #800020 !important; /* Red Maroon */
+}
+
+/* Deep Black text utility */
+.text-black-pure {
+  color: #0F172A !important;
+}
+
+/* Cards elevation & border with delicate soft maroon tint */
+.card-clean {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-card, #EED4CE);
+  box-shadow: var(--card-shadow, 0 2px 12px -2px rgba(128, 0, 32, 0.06));
+}
+
+.card-clean-hover {
+  transition: all 0.2s ease-in-out;
+}
+.card-clean-hover:hover {
+  border-color: #800020;
+  box-shadow: 0 10px 28px 0 rgba(128, 0, 32, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Custom scrollbar styled with red maroon and soft cream */
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+::-webkit-scrollbar-track {
+  background: #F5E5E1;
+}
+::-webkit-scrollbar-thumb {
+  background: #800020;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #660019;
+}
